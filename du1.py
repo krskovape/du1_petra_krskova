@@ -40,8 +40,7 @@ setpos(a,b)
 i=1
 t=p_radku*p_sloupcu
 
-for _ in range(t):
-    
+for _ in range(t):   
     #vypsání tahu
     print("Tah",i,"z",t)
     i+=1
@@ -60,9 +59,7 @@ for _ in range(t):
     x= a + ((strana/2) + strana*(sloup-1))
     y= b + ((strana/3) + strana*(rad-1))
     setpos(x, y)
-    pendown()
-    write("X", align="center", font=["Arial", 30, "normal"])
-    penup()       
+    write("X", align="center", font=["Arial", 30, "normal"])     
     setpos(a,b)
 
     #načtení souřadnic od druhého hráče a ošetření, že nejsou mimo hrací pole
@@ -75,7 +72,6 @@ for _ in range(t):
         sloup = int(input("sloupec: "))
 
     #vykreslení kolečka na daných souřadnicích
-    penup()
     x= a + ((strana/2) + strana*(sloup-1))
     y= b + ((strana/3) + strana*(rad-1))
     setpos(x, y)
