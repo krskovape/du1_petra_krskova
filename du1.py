@@ -2,10 +2,18 @@ from turtle import *
 
 speed(0)
 
+print("Vítej u hry PIŠKVORKY")
+
 #zadání počtu řádků, sloupců a velikosti strany políčka
-p_radku = 3
-p_sloupcu = 3
+p_radku = int(input("Zadej počet řádků herního pole: "))
+p_sloupcu = int(input("Zadej počet sloupců herního pole: "))
 strana = 90
+
+#ošetření toho, že zadaný počet řádků a sloupců není nulový nebo záporný
+while (p_radku<1) or (p_sloupcu<1):
+    print("Neplatná velikost hracího pole, zadej nové:")
+    p_radku = int(input("Počet řádků herního pole: "))
+    p_sloupcu = int(input("Počet sloupců herního pole: "))
 
 #nastavení počátku tak, aby se střed hracího pole zobrazoval doprostřed okna
 penup()
