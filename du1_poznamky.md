@@ -4,3 +4,5 @@ write("X", align="center", font=25) - udělá křížek
 
 penup() - nebude kreslit
 pendown() - kreslí
+
+jako jeden tah se počítá, že odehraje první hráč a následně druhý, nebo každé vykreslení křížku nebo kolečka?
