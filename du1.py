@@ -23,14 +23,14 @@ setpos(a,b)
 pendown()
 
 #vykreslení hracího pole
-for _ in range(p_sloupcu):
-    for _ in range(p_radku):
+for _ in range(p_radku):
+    for _ in range(p_sloupcu):
         for _ in range(4):
             forward(strana)
             left(90)
         forward(strana)
     left(180)
-    forward(strana*p_radku)
+    forward(strana*p_sloupcu)
     right(90)
     forward(strana)
     right(90)
