@@ -36,10 +36,10 @@ penup()
 setpos(a,b)
 pendown()
 
-rad=2
-sloup=2
+rad=1
+sloup=3
 x= a + ((strana/2) + 1.5*strana*(sloup-1))
-y= b + ((strana) + 2*strana*(rad-1))
+y= b + strana*(sloup) + 1.5*strana*(rad-1)
 setpos(x, y)
 
 exitonclick()

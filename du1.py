@@ -1,4 +1,4 @@
-from turtle import *
+from turtle import speed, penup, pendown, setpos, forward, left, right, write, pensize, circle, exitonclick
 
 speed(0)
 
@@ -37,12 +37,11 @@ for _ in range(p_radku):
 setpos(a,b)
 
 #samotná hra
-i=1
-t=p_radku*p_sloupcu
+p_tahu=p_radku*p_sloupcu
 
-for _ in range(t):   
+for i in range(1, p_tahu+1):   
     #vypsání tahu
-    print("Tah",i,"z",t)
+    print("Tah",i,"z",p_tahu)
     i+=1
 
     #načtení souřadnic od prvního hráče a ošetření, že nejsou mimo hrací pole
