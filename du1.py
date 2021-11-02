@@ -42,10 +42,14 @@ p_tahu=p_radku*p_sloupcu
 for i in range(1, p_tahu+1):   
     #vypsání tahu
     print("Tah",i,"z",p_tahu)
-    i+=1
 
-    #načtení souřadnic od prvního hráče a ošetření, že nejsou mimo hrací pole
-    print("Hráči 1, zadej souřadnice pro svůj tah:")
+    #zjištění, který hráč je na tahu a výzva k zadání souřadnic
+    if (i%2!=0):
+        print("Hráči 1, zadej souřadnice pro svůj tah:")
+    elif (i%2==0):
+        print("Hráči 2, zadej souřadnice pro svůj tah:")
+    
+    #načtení souřadnic od hráče a ošetření toho, že nejsou mimo hrací pole
     rad = int(input("řádek: "))
     sloup = int(input("sloupec: "))
     while (rad<1) or (rad>p_radku) or (sloup<1) or (sloup>p_sloupcu):
@@ -53,30 +57,17 @@ for i in range(1, p_tahu+1):
         rad = int(input("řádek: "))
         sloup = int(input("sloupec: "))
 
-    #vykreslení křížku na daných souřadnicích
+    #vykreslení křížku nebo kolečka podle pořadí hráče
     penup()
     x= a + ((strana/2) + strana*(sloup-1))
     y= b + ((strana/3) + strana*(rad-1))
     setpos(x, y)
-    write("X", align="center", font=["Arial", 30, "normal"])     
-    setpos(a,b)
-
-    #načtení souřadnic od druhého hráče a ošetření, že nejsou mimo hrací pole
-    print("Hráči 2, zadej souřadnice pro svůj tah:")
-    rad = int(input("řádek: "))
-    sloup = int(input("sloupec: "))
-    while (rad<1) or (rad>p_radku) or (sloup<1) or (sloup>p_sloupcu):
-        print("Souřadnice jsou mimo hrací pole, zadej nové:")
-        rad = int(input("řádek: "))
-        sloup = int(input("sloupec: "))
-
-    #vykreslení kolečka na daných souřadnicích
-    x= a + ((strana/2) + strana*(sloup-1))
-    y= b + ((strana/3) + strana*(rad-1))
-    setpos(x, y)
     pendown()
-    pensize(3)
-    circle(20)
+    if (i%2!=0):
+        write("X", align="center", font=["Arial", 30, "normal"])
+    elif (i%2==0):
+        pensize(3)
+        circle(20)
     penup()       
     setpos(a,b)
 
