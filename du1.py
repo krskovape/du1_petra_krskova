@@ -60,14 +60,15 @@ for i in range(1, p_tahu+1):
     #vykreslení křížku nebo kolečka podle pořadí hráče
     penup()
     x= a + ((strana/2) + strana*(sloup-1))
-    y= b + ((strana/3) + strana*(rad-1))
+    y= b + ((strana/4) + strana*(rad-1))
     setpos(x, y)
     pendown()
     if (i%2!=0):
-        write("X", align="center", font=["Arial", 30, "normal"])
+        vel_pisma=int(strana/3)
+        write("X", align="center", font=["Arial", vel_pisma, "normal"])
     elif (i%2==0):
-        pensize(3)
-        circle(20)
+        vel_pisma=int(strana/2.5)
+        write("O", align="center", font=["Arial", vel_pisma, "normal"])
     penup()       
     setpos(a,b)
 
